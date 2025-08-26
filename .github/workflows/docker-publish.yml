@@ -28,19 +28,3 @@ jobs:
         file: ./Dockerfile
         push: true
         tags: ${{ secrets.DOCKERHUB_USERNAME }}/react-mysql-app:latest
-
-    - name: Build and push MySQL
-      uses: docker/build-push-action@v4
-      with:
-        context: ./mysql
-        file: ./mysql/Dockerfile
-        push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/react-mysql-db:latest
-
-    - name: Build and push PHPMyAdmin
-      uses: docker/build-push-action@v4
-      with:
-        context: ./phpmyadmin
-        file: ./phpmyadmin/Dockerfile
-        push: true
-        tags: ${{ secrets.DOCKERHUB_USERNAME }}/react-mysql-phpmyadmin:latest
